@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script>
+      const loadData = function() {
+        function makeRequest() {
+          var id = document.getElementById("monsterId").value;
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", `https://botw-compendium.herokuapp.com/api/v2/entry/${id}`, true);
+          xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+              var data = JSON.parse(this.responseText);
+              console.log(data);
+              if (data.data && data.data.name) {
+                const monster = data.data;
+                const name = monster.name;
+                const description = monster.description;
+                const image = monster.image;
+            document.getElementById("name").innerHTML = name;
+            document.getElementById("description").innerHTML = description;
+            document.getElementById("image").src = image;
+
+            // Show the pop-up
+            document.getElementById("pop-up").style.display = "block";
+          } else {
+            console.error("No monster data found!");
+          }
+        }
+      };
+      xhr.send();
+    }
+    makeRequest();
+  };
+
+  // Hide the pop-up
+  const closePopUp = function() {
+    document.getElementById("pop-up").style.display = "none";
+  };
+</script>
+  </head>
+  <body>
+    <h3><b>The Legend of Zelda: Breath of the Wild</b></h3>
+    <h3><b>Please put in a id from 1 to 389</b></h3>
+    <ul>
+      <li>Creatures (1-83)</li>
+      <li>Monsters (84-164)</li>
+      <li>Materials (165-200)</li>
+      <li>Equipment (201-385)</li>
+      <li>Treasure (386-389)</li>
+    </ul>
+    <input type="text" id="monsterId">
+    <button onclick="loadData()">Load Data</button>
+    <div id="pop-up" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5);">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px;">
+        <h1 id="name"></h1>
+        <p id="description"></p>
+        <img id="image">
+        <button onclick="closePopUp()">Close</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+

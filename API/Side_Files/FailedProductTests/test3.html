@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function makeRequest() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://botw-compendium.herokuapp.com/api/v2/category/monsters", true);
+        xhr.onreadystatechange = function() {
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+            var table = "<table><tr><th>Name</th><th>Type</th></tr>";
+            for (var i = 0; i < data.length; i++) {
+              table += "<tr><td>" + data[i].name + "</td><td>" + data[i] + "</td></tr>";
+            }
+            table += "</table>";
+            console.log(table);
+            document.getElementById("response").innerHTML = table;
+          }
+        };
+        xhr.send();
+      }
+
+    </script>
+  </head>
+  <body>
+    <button onclick="makeRequest()">Make Request</button>
+    <div id="response"></div>
+  </body>
+</html>
+

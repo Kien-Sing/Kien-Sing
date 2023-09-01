@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data</title>
+    <script>
+        const { app, BrowserWindow } = require('electron')
+const fetch = require('electron-fetch').default;
+
+app.on('ready', () => {
+  let win = new BrowserWindow({ width: 800, height: 600 })
+  win.loadFile('index.html')
+  win.webContents.on('did-finish-load', () => {
+    fetch('https://botw-compendium.herokuapp.com/api/v2/all', {
+      method: 'GET',
+      mode: 'cors'
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Get a reference to the table body
+      const tableBody = win.webContents.getElementById('data-table-body');
+      // Get a reference to the select element
+      const typeSelect = win.webContents.getElementById('type-select');
+
+      // Iterate over the data and create table rows
+      data.forEach(item => {
+        const row = win.webContents.createElement('tr');
+        row.innerHTML = `<td>${item.id}</td><td>${item.name}</td><td>${item.type}</td>`;
+        tableBody.appendChild(row);
+      });
+
+      // Add an event listener to the select element to handle changes
+      typeSelect.addEventListener('change', (event) => {
+        const selectedType = event.target.value;
+
+        // Iterate over the table rows and hide the ones that don't match the selected type
+        const rows = tableBody.getElementsByTagName('tr');
+        Array.from(rows).forEach((row) => {
+          const typeCell = row.getElementsByTagName('td')[2];
+          if (selectedType !== 'all' && typeCell.textContent !== selectedType) {
+            row.style.display = 'none';
+          } else {
+            row.style.display = '';
+          }
+        });
+      });
+    })
+    .catch(error => console.error(error));
+  });
+});
+    </script>
+    <style>
+      /* CSS styles for the table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+  
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+</head>
+<body>
+    <select id="type-select">
+        <option value="all">All</option>
+        <option value="armor">Armor</option>
+        <option value="material">Material</option>
+        <option value="weapon">Weapon</option>
+      </select>
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+        </tbody>
+      </table>
+</body>
+</html>

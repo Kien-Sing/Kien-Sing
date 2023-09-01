@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+          <title>API Data</title>
+          <style>
+            /* CSS styles for the table */
+            table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+        
+            th, td {
+              border: 1px solid #ddd;
+              padding: 8px;
+              text-align: left;
+            }
+        
+            th {
+              background-color: #f2f2f2;
+            }
+          </style>
+        </head>
+        <body>
+          <input type="text" id="item-id-input" placeholder="Enter item ID">
+          <button id="search-button">Search</button>
+          <div id="item-info"></div>
+          <script>
+            searchButton.addEventListener('click', () => {
+  // Get the value of the input element
+  const itemId = itemIdInput.value;
+  // Fetch the data from the API
+  fetch('https://botw-compendium.herokuapp.com/api/v2/all', {
+    method: 'GET',
+    mode: 'cors'
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Find the item with the matching ID
+    const item = data.find(i => i.id == itemId);
+    if (item) {
+      // Display the item's information
+      itemInfo.innerHTML = `<h2>${item.name}</h2><p>Type: ${item.type}</p><p>Description: ${item.description}</p>`;
+      console.log(item.name)
+    } else {
+      alert('Item not found');
+      console.log("Nee werkt niet")
+    }
+  })
+  .catch(error => console.error(error));
+});
+console.log(data)
+            // Get references to the input and button elements
+           // const itemIdInput = document.getElementById('item-id-input');
+            //const searchButton = document.getElementById('search-button');
+            //const itemInfo = document.getElementById('item-info');
+        
+            // Add an event listener to the search button to handle clicks
+           // searchButton.addEventListener('click', () => {
+              // Get the value of the input element
+             // // Fetch the item data from the API
+             //fetch(`https://botw-compendium.herokuapp.com/api/v2/${itemId}`, {
+             //   method: 'GET',
+             //   mode: 'cors'
+            //  })
+            //  .then(response => response.json())
+            //  .then(data => {
+            //    itemInfo.innerHTML = `<h2>${data.name}</h2><p>Type: ${data.type}</p><p> Description: ${data.description}</p>`;
+             // })
+            //  .catch(error => {
+            //    alert('Item not found');
+            //  });
+          //  });
+          </script>
+        </body>
+        </html>

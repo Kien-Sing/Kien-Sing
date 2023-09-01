@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script>
+      const loadData = function() {
+        const data = {
+          0: {
+            "category": "monsters",
+            "common_locations": [
+              "Divine Beast Vah Naboris"
+            ],
+            "description": "This phantom of Ganon attacked the Divine Beast Vah Naboris and was responsible for the demise of the Champion Urbosa. It specializes in quick, lightning-based attacks.",
+            "drops": [],
+            "id": 159,
+            "image": "https://botw-compendium.herokuapp.com/api/v2/entry/thunderblight_ganon/image",
+            "name": "thunderblight ganon"
+          }
+        };
+
+        const monster = data[0];
+        const name = monster.name;
+        const description = monster.description;
+        const image = monster.image;
+
+        document.getElementById("name").innerHTML = name;
+        document.getElementById("description").innerHTML = description;
+        document.getElementById("image").src = image;
+      };
+    </script>
+  </head>
+  <body>
+    <a href="index.html">OG</a>
+    <br>
+    <a href="indexl.html">Not Work</a>
+    <br>
+    <button onclick="loadData()">Load Data</button>
+    <h1 id="name"></h1>
+    <p id="description"></p>
+    <img id="image">
+  </body>
+</html>

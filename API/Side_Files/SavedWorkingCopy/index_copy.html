@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script>
+      const loadData = function() {
+        function makeRequest() {
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", "https://botw-compendium.herokuapp.com/api/v2/category/monsters", true);
+          xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+              var data = JSON.parse(this.responseText);
+              console.log(data);
+
+              // Get the data id from the input field
+              const dataId = document.getElementById("data-id").value;
+              const monster = data[dataId];
+              const name = monster.name;
+              const description = monster.description;
+              const image = monster.image;
+
+              document.getElementById("name").innerHTML = name;
+              document.getElementById("description").innerHTML = description;
+              document.getElementById("image").src = image;
+            }
+          };
+          xhr.send();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <a href="index.html">OG</a>
+    <br>
+    <input type="text" id="data-id">
+    <button onclick="loadData()">Load Data</button>
+    <h1 id="name"></h1>
+    <p id="description"></p>
+    <img id="image">
+  </body>
+</html>
