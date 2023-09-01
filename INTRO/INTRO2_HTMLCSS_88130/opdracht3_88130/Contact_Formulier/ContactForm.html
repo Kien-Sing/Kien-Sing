@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ContactForm.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='nav'>
+        <ul>
+            <li>Home
+                <ul class="sub-menu">
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+                <span class="arrow">&#9660</span>
+            </li>
+            <li>Over Mij
+                <ul class="sub-menu">
+                    <li><a href="../Css_grid_Hobby/Hobby.html">Hobby's</a></li>
+                    <li><a href="../AR/ar.html">Augmented Reality</a></li>
+                </ul>
+                <span class="arrow">&#9660</span>
+            </li>
+            <li>Info
+                <ul class="sub-menu">
+                    
+                    <li><a href="../Tabel/Tabel.html">Tabel</a></li>
+                </ul>
+                <span class="arrow">&#9660</span>
+            </li>
+            <li>Contact
+                <ul class="sub-menu">
+                    <li><a href="ContactForm.html">Contact Formulier</a></li>
+                </ul>
+                <span class="arrow">&#9660</span>
+            </li>
+        </ul>
+    </div>
+    <div class="contact-title">
+        <h1>Hello User</h1>
+        <h2>We are always ready to serve you!</h2>
+    </div>
+    <div class="contact-form">
+        <form id="contact-form" method="post">
+            <fieldset>
+                <legend>Contacten</legend>
+            <label for="aanhef">Aanhef:</label>
+            <select class="form-control" name="aanhef" required>
+                <option value="" disabled selected hidden>Kies...</option>
+                <option value="meneer">Meneer</option>
+                <option value="mevrouw">Mevrouw</option>
+            </select>
+            <br><br>
+            <label for="vname">Voornaam:</label>
+            <input type="text" id="vname" class="form-control" placeholder="Je voornaam" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" title="Het moet tenminste drie letters of meer bevatten met één kleine letter en één hoofdletter." required><br><br>
+            <label for="aname">Achternaam:</label>
+            <input type="text" id="aname" class="form-control" placeholder="Je achternaam" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" title="Het moet tenminste drie letters of meer bevatten met één kleine letter en één hoofdletter."required><br><br>
+            <label for="sname">Straatnaam:</label>
+            <input type="text" id="sname" class="form-control" placeholder="Je straatnaam" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" title="Het moet tenminste drie letters of meer bevatten met één kleine letter en één hoofdletter."required><br><br>
+            <label for="hnumber">Huisnummer:</label>
+            <input type="text" id="hnumber" class="form-control" placeholder="Je huisnummer" pattern="(?=.*[1-9]).{1,}" title="Het moet tenminste één letters of meer" required><br><br>            
+            <label for="pcode">Postcode:</label>
+            <input type="text" id="pcode" class="form-control" placeholder="Je postcode" pattern="[0-9]{4}\s?[A-Z]{2}$" title="Het moet 4 cijfers hebben en 2 letters" required><br><br>
+            <label for="pname">Plaatsnaam:</label>
+            <input type="text" id="pnaam" class="form-control" placeholder="Je plaatsnaam" pattern="[a-z]\s?[A-Z]).{2,}" title="Het moet tenminste 2 letters" required><br><br>          
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" placeholder="Je email" required><br><br>            
+            <label for="wachtwoord">Wachtwoord:</label>
+            <input type="password" id="wachtwoord"class="form-control" placeholder="Je wachtwoord" pattern="()?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" required><br><br>            
+            <label for="hwachtwoord">Herhaal Wachtwoord:</label>
+            <input type="password" id="hwachtwoord"  class="form-control" placeholder="Herhaal je wachtwoord" pattern="()?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" required><br><br>           
+            <input type="submit" class="form-control submit" value=" Verzenden">
+            </fieldset> 
+            </form>
+    </div>
+</body>
+</html>

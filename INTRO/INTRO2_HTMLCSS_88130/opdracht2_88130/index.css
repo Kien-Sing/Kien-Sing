@@ -1,0 +1,293 @@
+/* nav */
+.nav{
+  position: sticky;
+  top:-10px;
+}
+.nav > ul {
+  background-color: black;
+  height: 28px;
+}
+.nav > ul > li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 5px 25px;
+  color: white;
+}
+.nav > ul > li:hover {
+  background-color: white;
+  color: black;
+}
+ul.sub-menu{
+  position: absolute;
+  background-color: white;
+  color: black;
+  list-style-type: none;
+    width: 125px;
+    padding-left:0px;
+    margin-left: -25px;
+  padding-top: 5px;
+  opacity: 0;
+}
+ul.sub-menu li{
+  padding-left:25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.nav li:hover .sub-menu{
+  opacity: 1;
+}
+ul.sub-menu li:hover{
+  color:white;
+  background-color: crimson;
+}
+.nav > ul > li > ul > li > a{
+  text-decoration: none;
+}
+/* nav */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+    }
+    img:hover {
+        background-color: greenyellow;
+    }
+    .divGI{
+        height: 450px;
+        width: 300px;
+    }
+    .divGR{
+        height: 430px;
+        width: 300px;
+    }
+    .divME{
+        height: 410px;
+        width: 300px;
+    }
+    .divSM{
+        height: 390px;
+        width: 300px;
+    }
+    .divTI{
+        height: 370px;
+        width: 300px;
+    }
+
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; 
+        position: relative;
+        width: 50%;}
+    .div2 { grid-area: 2 / 1 / 3 / 2; 
+        position: relative;
+        width: 50%;}
+    .div3 { grid-area: 3 / 1 / 4 / 2; 
+        position: relative;
+        width: 50%;}
+    .div4 { grid-area: 4 / 1 / 5 / 2; 
+        position: relative;
+        width: 50%;}
+    .div5 { grid-area: 5 / 1 / 6 / 2; 
+        position: relative;
+        width: 50%;}
+    .div6 { grid-area: 1 / 2 / 2 / 3; 
+        position: relative;
+        width: 50%;}
+    .div7 { grid-area: 2 / 2 / 3 / 3; 
+        position: relative;
+        width: 50%;}
+    .div8 { grid-area: 3 / 2 / 4 / 3; 
+        position: relative;
+        width: 50%;}
+    .div9 { grid-area: 4 / 2 / 5 / 3; 
+        position: relative;
+        width: 50%;}
+    .div10 { grid-area: 5 / 2 / 6 / 3; 
+        position: relative;
+        width: 50%;}
+    .div11 { grid-area: 1 / 3 / 2 / 4; 
+        position: relative;
+        width: 50%;}
+    .div12 { grid-area: 2 / 3 / 3 / 4; 
+        position: relative;
+        width: 50%;}
+    .div13 { grid-area: 3 / 3 / 4 / 4; 
+        position: relative;
+        width: 50%;}
+    .div14 { grid-area: 4 / 3 / 5 / 4; 
+        position: relative;
+        width: 50%;}
+    .div15 { grid-area: 5 / 3 / 6 / 4; 
+        position: relative;
+        width: 50%;}
+    .div16 { grid-area: 1 / 4 / 2 / 5; 
+        position: relative;
+        width: 50%;}
+    .div17 { grid-area: 2 / 4 / 3 / 5; 
+        position: relative;
+        width: 50%;}
+    .div18 { grid-area: 3 / 4 / 4 / 5; 
+        position: relative;
+        width: 50%;}
+    .div19 { grid-area: 4 / 4 / 5 / 5; 
+        position: relative;
+        width: 50%;}
+    .div20 { grid-area: 5 / 4 / 6 / 5; 
+        position: relative;
+        width: 50%;}
+    .div21 { grid-area: 1 / 5 / 2 / 6; 
+        position: relative;
+        width: 50%;}
+    .div22 { grid-area: 2 / 5 / 3 / 6; 
+        position: relative;
+        width: 50%;}
+    .div23 { grid-area: 3 / 5 / 4 / 6; 
+        position: relative;
+        width: 50%;}
+    .div24 { grid-area: 4 / 5 / 5 / 6; 
+        position: relative;
+        width: 50%;}
+    .div25 { grid-area: 5 / 5 / 6 / 6; 
+        position: relative;
+        width: 50%;}
+    .div26 { grid-area: 1 / 6 / 2 / 7; 
+        position: relative;
+        width: 50%;}
+    .div27 { grid-area: 2 / 6 / 3 / 7; 
+        position: relative;
+        width: 50%;}
+    .div28 { grid-area: 3 / 6 / 4 / 7; 
+        position: relative;
+        width: 50%;}
+    .div29 { grid-area: 4 / 6 / 5 / 7; 
+        position: relative;
+        width: 50%;}
+    .div30 { grid-area: 5 / 6 / 6 / 7; 
+        position: relative;
+        width: 50%;}
+      
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      
+      .overlay {
+        position: absolute;
+        border-radius: 25px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: greenyellow;
+      }
+      
+      .div1:hover .overlay {
+        opacity: 1;
+      }
+      .div2:hover .overlay {
+        opacity: 1;
+      }
+      .div3:hover .overlay {
+        opacity: 1;
+      }
+      .div4:hover .overlay {
+        opacity: 1;
+      }
+      .div5:hover .overlay {
+        opacity: 1;
+      }
+      .div6:hover .overlay {
+        opacity: 1;
+      }
+      .div7:hover .overlay {
+        opacity: 1;
+      }
+      .div8:hover .overlay {
+        opacity: 1;
+      }
+      .div9:hover .overlay {
+        opacity: 1;
+      }
+      .div10:hover .overlay {
+        opacity: 1;
+      }
+      .div11:hover .overlay {
+        opacity: 1;
+      }
+      .div12:hover .overlay {
+        opacity: 1;
+      }
+      .div13:hover .overlay {
+        opacity: 1;
+      }
+      .div14:hover .overlay {
+        opacity: 1;
+      }
+      .div15:hover .overlay {
+        opacity: 1;
+      }
+      .div16:hover .overlay {
+        opacity: 1;
+      }
+      .div17:hover .overlay {
+        opacity: 1;
+      }
+      .div18:hover .overlay {
+        opacity: 1;
+      }
+      .div19:hover .overlay {
+        opacity: 1;
+      }
+      .div20:hover .overlay {
+        opacity: 1;
+      }
+      .div21:hover .overlay {
+        opacity: 1;
+      }
+      .div22:hover .overlay {
+        opacity: 1;
+      }
+      .div23:hover .overlay {
+        opacity: 1;
+      }
+      .div24:hover .overlay {
+        opacity: 1;
+      }
+      .div25:hover .overlay {
+        opacity: 1;
+      }
+      .div26:hover .overlay {
+        opacity: 1;
+      }
+      .div27:hover .overlay {
+        opacity: 1;
+      }
+      .div28:hover .overlay {
+        opacity: 1;
+      }
+      .div29:hover .overlay {
+        opacity: 1;
+      }
+      .div30:hover .overlay {
+        opacity: 1;
+      }
+      .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
