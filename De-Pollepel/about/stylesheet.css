@@ -1,0 +1,89 @@
+body {
+    background-color: #DFF8EB;
+    margin: 0;
+}
+
+/* Grid */
+.parent {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 2 / 2 / 3 / 3; }
+.div2 { grid-area: 4 / 2 / 5 / 3; }
+.div3 { grid-area: 6 / 2 / 7 / 3; }
+.div4 { grid-area: 8 / 2 / 9 / 3; }
+.div5 { grid-area: 2 / 4 / 3 / 7; 
+    background-color: #CDCDCD;
+    border: white 5px solid;
+    height: 6vh;
+    padding: 2vh;
+    width: 100%;
+}
+.div6 { grid-area: 4 / 4 / 5 / 7;
+	background-color: #CDCDCD;
+	border: white 5px solid;
+    height: 6vh;
+    padding: 2vh;
+    width: 100%;
+}
+.div7 { grid-area: 6 / 4 / 7 / 7;
+	background-color: #CDCDCD;
+	border: white 5px solid;
+    height: 6vh;
+    padding: 2vh;
+    width: 100%;
+}
+.div8 { grid-area: 8 / 4 / 9 / 7;
+	background-color: #CDCDCD;
+	border: white 5px solid;
+    height: 6vh;
+    padding: 2vh;
+    width: 100%;
+}
+
+/* styling navlist */
+#navlist {
+	background-color: white;
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+ 
+/* styling navlist anchor element */
+#navlist a {
+	float:left;
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+#navlist a #login {
+	float:left;
+	display: block;
+	color: red;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.navlist-right {
+	float:right;
+}
+
+/* hover effect of navlist anchor element */
+#navlist a:hover {
+	background-color: #DFF8EB;
+	color: #214E34;
+}
+
+img {
+	border: white 4px solid;
+}

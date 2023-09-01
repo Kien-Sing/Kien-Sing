@@ -1,0 +1,14 @@
+ <?php
+        $query = " select * from gerecht ";
+        $result = mysqli_query($mysqli, $query);
+ 
+        while ($data = mysqli_fetch_assoc($result)) {
+        ?>
+        <?php echo $data['titel']; ?>
+            <img src="image/<?php echo $data['media']; ?>">
+            <?php echo $data['beschrijving']; ?>
+            <?php echo $data['gerecht']; ?>
+
+        <?php
+        }
+        ?>

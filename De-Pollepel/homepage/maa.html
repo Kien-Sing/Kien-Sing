@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="../foto/icon.jpeg" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="user">
+        <header class="user__header">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+            <h1 class="user__title">Registreer hier!</h1>
+        </header>
+
+        <form class="form" action="./maa.php" method="post">
+            <div class="form__group">
+                <input type="text" placeholder="Username" required name="naamVeld" id="naamVeld" class="form__input" />
+            </div>
+
+            <div class="form__group">
+                <input type="email" placeholder="Email" required name="emailVeld" id="emailVeld" class="form__input" />
+            </div>
+
+            <div class="form__group">
+                <input type="password" placeholder="Password" required name="passwordVeld" id="passwordVeld"
+                    class="form__input" />
+            </div>
+
+            <button class="btn" name="verzend" type="submit" id="verzend">Register</button>
+        </form>
+    </div>
+    <div class="loginRedirect">
+        <div class="center">
+            <a href="./login.html"><button id="redirect"><b>Log in als je al een account hebt</b></button></a>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+
+
+
+
+
+</body>
+
+</html>

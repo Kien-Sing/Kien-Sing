@@ -1,0 +1,164 @@
+/* Background collor #DFF8EB
+   Div Collor #CDCDCD
+*/
+
+body{
+    background-color: #DFF8EB;
+    margin: 0;
+
+}
+#box{
+    margin-left: 28vh;
+    margin-top: 10vh;
+    width: 150vh;
+    height: 80vh;
+    background-image: url(https://smaakvolnh.nl/wp-content/uploads/2022/03/Tips-om-te-koken-voor-een-grote-groep-mensen.jpg);
+    background-size: cover;
+	background-repeat: no-repeat;
+	border: white 10px solid;
+	text-align: center;
+
+}
+
+#searchLijst{
+	margin-left: 86vh;
+	margin-top: 10vh;
+	width: 40vh;
+    height: auto;
+    border: solid white 5px;
+	padding-left: 0.5vh;
+	padding-bottom: 1px;
+	background-color: #CDCDCD;
+	text-align: center;
+}
+
+.zoekbaar{
+	list-style: none;
+}
+
+#about{
+	position: relative;
+	top: 65vh;
+	font-size: 5vh;
+	border: solid black 1px;
+	background: #cdcdcd72;
+	font-family: 'Times New Roman', Times, serif;
+	cursor: pointer;
+	transition-duration: 250ms;
+	
+}
+
+#about:hover{
+	background: #cdcdcd;
+}
+
+  .section::before {
+	animation: bounce 1s ease infinite;
+	bottom: 0.9rem;
+	color: rgb(0, 0, 0);
+	content: '╲╱';
+	font-size: 2rem;
+	height: 4rem;
+	left: 50%;
+	letter-spacing: -1px;
+	line-height: 4rem;
+	margin-left: -3rem;
+	opacity: 0.8;
+	position: absolute;
+	text-align: center;
+	width: 6rem;
+  }
+  
+  @keyframes bounce {
+	50% {
+	  transform: translateY(-50%);
+	}
+  }
+
+
+
+/* styling navlist */
+#navlist {
+	background-color: #ffffff;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	transition-duration: 250ms;
+}
+ 
+/* styling navlist anchor element */
+#navlist a {
+	float:left;
+	display: block;
+	color: #000000;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 15px;
+	transition-duration: 250ms;
+}
+
+#navlist a #login{
+	float:left;
+	display: block;
+	color: #ff0000;
+	text-align: center;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.navlist-right{
+	float:right;
+}
+
+/* hover effect of navlist anchor element */
+#navlist a:hover {
+	background-color: #DFF8EB;
+	color: #214E34;
+}
+ 
+/* styling search bar */
+.search input[type=text]{
+	width:300px;
+	height:25px;
+	border-radius:25px;
+	border: solid black 1px;
+
+}
+ 
+.search{
+	float:right;
+	margin:5vh;
+
+}
+ 
+.search button{
+	background-color: #ffffff;
+	color: #000000;
+	float: right;
+	padding: 5px 10px;
+	margin-right: 16px;
+	font-size: 12px;
+	border: none;
+	cursor: pointer;
+}
+a {
+	color: #333; /* Change to your preferred color */
+	text-decoration: none;
+	font-weight: bold; /* Change to your preferred font weight */
+  }
+  
+  a:hover {
+	text-decoration: underline;
+  }
+  
+  p {
+	margin: 0; /* Remove default margin to align the text with the link */
+  }
+  
+  /* Optional: Change the cursor style to pointer when hovering over the link */
+  a:hover {
+	cursor: pointer;
+  }
+  
