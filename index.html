@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.120.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.120.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/three@0.120.0/examples/js/WebGL.js"></script>
+    <title>Dystopia</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+//Scene
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1080 );
+camera.position.z = 5;
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+
+//Figuren - Hologram objecten
+var model;
+
+// Load the GLTF model using Three.js GLTFLoader
+var loader = new THREE.GLTFLoader();
+loader.load( 'head_model_of_a_child/scene.gltf', function ( gltf ) {
+
+  model = gltf.scene;
+
+  // Rotate the model 45 degrees about the y-axis
+  model.rotation.y = -45 * ( Math.PI / 180 );
+  model.scale.set(0.5, 0.5, 0.5);
+  scene.add( model );
+
+} )
+
+var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight)
+//Hologrambox vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+//Hologram container
+//cube
+var cubeGeometry = new THREE.BoxGeometry( 1, 0.5, 1 );
+var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff,} );
+var cube1 = new THREE.Mesh( cubeGeometry, cubeMaterial );
+cube1.position.y -= 1.4;
+scene.add(cube1);
+
+var cubeGeometry = new THREE.BoxGeometry( 1, 0.5, 1 );
+var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+var cube2 = new THREE.Mesh( cubeGeometry, cubeMaterial );
+cube2.position.y -= 1.4;
+scene.add(cube2);
+//Hologram beam
+//cylinder
+var cylinderGeometry = new THREE.CylinderGeometry( 0.3, 0.3, 0.1,64 );
+var cylinderMaterial = new THREE.MeshBasicMaterial( { color: 0x00ffff} );
+var cylinder1 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+cylinder1.position.y -= 1.15;
+scene.add(cylinder1);
+
+var cylinderGeometry = new THREE.CylinderGeometry( 0.3, 0.3, 0.1,16 );
+var cylinderMaterial = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe:true} );
+var cylinder2 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+cylinder2.position.y -= 1.15;
+scene.add(cylinder2);
+
+var cylinderGeometry = new THREE.CylinderGeometry( 1.2, 0.3, 3,64 );
+var cylinderMaterial = new THREE.MeshBasicMaterial( { color: 0x00ffff,transparent:true, opacity:0.5} );
+var cylinder3 = new THREE.Mesh( cylinderGeometry, cylinderMaterial );
+cylinder3.position.y -= 0;
+scene.add(cylinder3);
+
+//Hologrambox ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//Animatie
+var startTime = performance.now();
+var animate = function () {
+requestAnimationFrame( animate );
+var currentTime = performance.now();
+var elapsedTime = currentTime - startTime;
+if ((elapsedTime / 13000) % 2 >= 1) {
+cylinder3.visible = false;
+model.visible = false;
+} else {
+cylinder3.visible = true;
+model.visible = true;
+}
+
+// render the scene
+renderer.render(scene, camera);
+};
+animate();
+</script>
+</html>
