@@ -1,0 +1,54 @@
+body{
+	background-image: url( https://media.istockphoto.com/vectors/abstract-white-background-geometric-texture-vector-id909493912?k=20&m=909493912&s=170667a&w=0&h=ZsTDUusHbGddVsQzkaZ8iDeMOf0YGPNtZPgz9Pykyrg=);
+background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+.parent {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	}
+	
+	.div1 { grid-area: 2 / 1 / 3 / 2; 
+	}
+	.div2 { grid-area: 4 / 1 / 5 / 2; 
+	}
+	.div3 { grid-area: 6 / 1 / 7 / 2;
+	 }
+	.div4 { grid-area: 2 / 3 / 3 / 7;
+background-color: #535353;
+width: 80vh;
+height: 15vh;
+padding: 2vh;
+
+	 }
+	.div5 { grid-area: 4 / 3 / 5 / 7;
+		background-color: #535353;
+width: 80vh;
+height: 15vh;
+padding: 2vh;
+	 }
+	.div6 { grid-area: 6 / 3 / 7 / 7;
+		background-color: #535353;
+width: 80vh;
+height: 15vh;
+padding: 2vh;
+	}
+
+	.footer2 {
+		height: 50px;
+		width: 100%;
+		background-color: #9D0000;
+		color:  white;
+		padding: 1vh;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		position: sticky;
+		position: -webkit-sticky;
+	}
